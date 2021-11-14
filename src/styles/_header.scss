@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem 1rem;
+  h1 {
+    font-size: 3.4rem;
+    color: #cec8c6;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #63727d;
+    font-size: 1.5rem;
+  }
+}

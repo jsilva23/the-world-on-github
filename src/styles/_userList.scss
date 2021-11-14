@@ -1,0 +1,13 @@
+.users-list {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-auto-rows: auto;
+
+  grid-gap: 1rem;
+  width: 100%;
+  margin-top: 20px;
+
+  padding: 2rem;
+}

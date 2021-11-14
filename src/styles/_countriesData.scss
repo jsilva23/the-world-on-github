@@ -1,0 +1,31 @@
+.countries-datas {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  div:not(:last-child) {
+    border-right: 2px solid #cec8c6;
+  }
+
+  div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+
+    .numbers {
+      color: #cec8c6;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .desc {
+      color: #cec8c6;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+  }
+}
