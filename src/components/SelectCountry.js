@@ -17,7 +17,6 @@ const SelectCountry = ({ setLocation }) => {
   const currentCountryHandler = (e) => {
     setCurrentCountry(e.target.textContent);
     setLocation(`location:${e.target.textContent.toLowerCase()}`);
-    setShowCountries(false);
   };
 
   const currentCountryInputHandler = (e) => {
@@ -30,8 +29,6 @@ const SelectCountry = ({ setLocation }) => {
           elem.toUpperCase().indexOf(e.target.value.toUpperCase()) === 0
       )
     );
-
-    setShowCountries(true);
   };
 
   const hideCountriesHandler = () => {

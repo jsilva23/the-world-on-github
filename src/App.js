@@ -1,57 +1,55 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 
 import Header from './components/Header';
 import UserList from './components/UserList';
+import { FEED_QUERY } from './queries';
 import './styles/app.scss';
-
-const FEED_QUERY = gql`
-  query ($first: Int, $location: String!) {
-    search(query: $location, type: USER, first: $first) {
-      userCount
-      edges {
-        node {
-          ... on User {
-            login
-            name
-            avatarUrl
-            company
-            followers {
-              totalCount
-            }
-
-            repositories {
-              totalCount
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 function App() {
   const first = 20;
   const [location, setLocation] = useState('location:angola');
-  const { loading, data } = useQuery(FEED_QUERY, {
+  const { loading, data, fetchMore } = useQuery(FEED_QUERY, {
     variables: { first, location },
   });
 
-  if (loading) {
-    return (
-      <>
-        <Header />
-        <h1>Loading</h1>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Header setLocation={setLocation} totalUsers={data.search.userCount} />
-        <UserList users={data.search.edges} />
-      </>
-    );
-  }
+  const fetchData = () => {
+    const { endCursor } = data.search.pageInfo;
+    fetchMore({
+      variables: { endCursor: endCursor },
+      updateQuery: (prevResults, { fetchMoreResult }) => {
+        fetchMoreResult.search.edges = [
+          ...prevResults.search.edges,
+          ...fetchMoreResult.search.edges,
+        ];
+        return fetchMoreResult;
+      },
+    });
+  };
+
+  return (
+    <>
+      {loading && (
+        <>
+          <Header />
+          <h1>Loading</h1>
+        </>
+      )}
+      {data && (
+        <>
+          <Header
+            setLocation={setLocation}
+            totalUsers={data.search.userCount}
+          />
+          <UserList
+            users={data.search.edges}
+            fetchData={fetchData}
+            hasNextPage={data.search.pageInfo.hasNextPage}
+          />
+        </>
+      )}
+    </>
+  );
 }
 
 export default App;
