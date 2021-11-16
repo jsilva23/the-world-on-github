@@ -5,16 +5,21 @@
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 100%;
-  max-width: 600px;
-  padding: 2rem;
+  max-width: 650px;
+  padding: 3rem;
   margin: 50px auto;
+
+  @media (max-width: 650px) {
+    padding: 2rem;
+  }
 
   .search-field {
     display: flex;
 
     background-color: #fff;
     width: 100%;
-    height: 2.6rem;
+    height: 3.6rem;
     border: 1px solid #ccc;
+    position: relative;
   }
 }

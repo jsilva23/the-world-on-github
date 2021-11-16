@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import Header from './components/Header';
+import Loading from './components/Loading';
 import UserList from './components/UserList';
 import { AppContext } from './contexts/AppContext';
 import './styles/app.scss';
@@ -11,7 +12,7 @@ function App() {
       {loading && (
         <>
           <Header />
-          <h1>Loading</h1>
+          <Loading size='50' />
         </>
       )}
       {data && (

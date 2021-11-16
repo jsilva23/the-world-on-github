@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { AppContext } from '../contexts/AppContext';
+import Loading from './Loading';
 import User from './User';
 
 const UserList = () => {
@@ -12,7 +13,7 @@ const UserList = () => {
       dataLength={data.search.edges.length}
       next={fetchData}
       hasMore={data.search.pageInfo.hasNextPage}
-      loader={<h4>Loading...</h4>}
+      loader={<Loading size='30' />}
     >
       {data.search.edges.map((user, index) => (
         <User key={index} user={user} />

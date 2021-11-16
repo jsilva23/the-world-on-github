@@ -5,8 +5,20 @@
 }
 
 html {
-  @media (max-width: 1500px) {
+  font-size: 62.5%;
+  @media (min-width: 1500px) {
     font-size: 85%;
+  }
+  @media (max-width: 852px) {
+    font-size: 60%;
+  }
+
+  @media (max-width: 556px) {
+    font-size: 50%;
+  }
+
+  @media (max-width: 385px) {
+    font-size: 45%;
   }
 }
 
@@ -16,6 +28,7 @@ body {
 }
 
 @import './user';
+@import './loading';
 @import './userList';
 @import './header';
 @import './searchField';

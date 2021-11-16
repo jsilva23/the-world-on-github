@@ -16,7 +16,7 @@
     border-radius: 50%;
   }
   .username {
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #cec8c6;
     margin-top: 5px;
@@ -27,8 +27,10 @@
     margin: 1rem auto;
     display: flex;
     flex-direction: column;
+    font-size: 1.4rem;
 
     div {
+      word-break: break-all;
       padding: 0.5rem;
       :nth-child(1) {
         font-weight: bold;

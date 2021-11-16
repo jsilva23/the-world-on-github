@@ -18,18 +18,21 @@
 }
 
 .input {
-  flex: 1;
   background-color: #cec8c6;
   display: flex;
   align-items: center;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
+  flex: 1;
+  @media (max-width: 650px) {
+    width: 50%;
+  }
   input {
     background: none;
     width: 100%;
     height: 100%;
-    font: inherit;
+    font-size: 1.5rem;
     border: none;
-    padding-left: 0.5rem;
+    padding-left: 1rem;
     outline: none;
   }
 }
@@ -38,15 +41,19 @@
   background-color: #2d4042;
   display: flex;
   align-items: center;
-  padding-right: 0.5rem;
+  padding-right: 1rem;
   position: relative;
+  @media (max-width: 650px) {
+    width: 50%;
+  }
+
   input {
     background: none;
     height: 100%;
-    font: inherit;
+    font-size: 1.5rem;
     border: none;
     border-left: 1px solid #cec8c6;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
     outline: none;
     color: #cec8c6;
   }
@@ -57,8 +64,8 @@
 
   ul {
     position: absolute;
-    top: 2.56rem;
-    right: 0;
+    top: 3.5rem;
+    left: 1px;
     width: 100%;
     list-style: none;
     background-color: #78827c;
@@ -68,6 +75,7 @@
     li {
       padding: 0.5rem 1rem;
       color: #cec8c6;
+      font-size: 1.5rem;
       cursor: pointer;
 
       &:hover {
