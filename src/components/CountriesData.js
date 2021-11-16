@@ -1,9 +1,14 @@
+import { useContext } from 'react';
+import { AppContext } from '../contexts/AppContext';
+
 const CountriesData = ({ totalUsers }) => {
   const date = new Date();
+  const { data } = useContext(AppContext);
+
   return (
     <div className='countries-datas'>
       <div>
-        <span className='numbers'>{totalUsers}</span>
+        <span className='numbers'>{data ? data.search.userCount : 0}</span>
         <span className='desc'>Users</span>
       </div>
       <div>

@@ -1,22 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { AppContext } from '../contexts/AppContext';
 import User from './User';
 
-const UserList = ({ users, fetchData, hasNextPage }) => {
+const UserList = () => {
+  const { data, fetchData } = useContext(AppContext);
+
   return (
     <InfiniteScroll
       className='users-list'
-      dataLength={users.length}
+      dataLength={data.search.edges.length}
       next={fetchData}
-      hasMore={hasNextPage}
+      hasMore={data.search.pageInfo.hasNextPage}
       loader={<h4>Loading...</h4>}
-      endMessage={
-        <p style={{ textAlign: 'center' }}>
-          <b>Yay! You have seen it all</b>
-        </p>
-      }
     >
-      {users.map((user, index) => (
+      {data.search.edges.map((user, index) => (
         <User key={index} user={user} />
       ))}
     </InfiniteScroll>

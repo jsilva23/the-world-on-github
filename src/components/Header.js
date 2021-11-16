@@ -7,8 +7,8 @@ const Header = ({ setLocation, totalUsers }) => {
       <h1>The World on GitHub</h1>
       <p>Search developers from anywhere in the world on GitHub</p>
 
-      <SearchField setLocation={setLocation} />
-      <CountriesData totalUsers={totalUsers} />
+      <SearchField />
+      <CountriesData />
     </div>
   );
 };

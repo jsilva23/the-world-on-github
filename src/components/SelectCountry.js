@@ -1,10 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
+import { AppContext } from '../contexts/AppContext';
 import { countryList } from '../helpers';
 
-const SelectCountry = ({ setLocation }) => {
+const SelectCountry = () => {
+  const { setLocation, currentCountry, setCurrentCountry } =
+    useContext(AppContext);
   const [showCountries, setShowCountries] = useState(false);
-  const [currentCountry, setCurrentCountry] = useState('angola');
   const [countries, setCountries] = useState(countryList);
   const inputRef = useRef(null);
 
