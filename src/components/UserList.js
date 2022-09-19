@@ -12,9 +12,11 @@ const UserList = ({ data, fetchData }) => {
       hasMore={data ? data.search.pageInfo.hasNextPage : false}
       loader={<Loading size='30' />}
     >
-      {data.search.edges.map((user, index) => (
-        <User key={index} user={user} />
-      ))}
+      {data ? (
+        data.search.edges.map((user, index) => <User key={index} user={user} />)
+      ) : (
+        <h1>No results!</h1>
+      )}
     </InfiniteScroll>
   );
 };
