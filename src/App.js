@@ -10,8 +10,11 @@ function App() {
   return (
     <>
       <Header />
-      {loading ? <Loading size='50' /> : null}
-      {data ? <UserList data={data} fetchData={fetchData} /> : null}
+      {loading ? (
+        <Loading size='50' />
+      ) : (
+        <UserList data={data} fetchData={fetchData} />
+      )}
     </>
   );
 }
