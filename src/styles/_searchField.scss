@@ -1,25 +1,7 @@
-.search-box {
-  background: rgba(255, 255, 255, 0.1);
+.search-field {
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 100%;
-  max-width: 650px;
-  padding: 3rem;
-  margin: 50px auto;
-
-  @media (max-width: 650px) {
-    padding: 2rem;
-  }
-
-  .search-field {
-    display: flex;
-
-    background-color: #fff;
-    width: 100%;
-    height: 3.6rem;
-    border: 1px solid #ccc;
-    position: relative;
-  }
+  margin-top: 30px;
 }
