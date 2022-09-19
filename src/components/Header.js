@@ -3,13 +3,19 @@ import SearchField from './SearchField';
 
 const Header = ({ setLocation, totalUsers }) => {
   return (
-    <div className='header'>
-      <h1>The World on GitHub</h1>
-      <p>Search developers from anywhere in the world on GitHub</p>
-
-      <SearchField />
-      <CountriesData />
-    </div>
+    <header>
+      <div className='header-content'>
+        <div className='content'>
+          <h1>The World on GitHub</h1>
+          <p>Search developers from anywhere in the world on GitHub</p>
+          <SearchField />
+        </div>
+        <img src='img/undraw_version_control_re_mg66.svg' alt='' />
+      </div>
+      <div>
+        <CountriesData />
+      </div>
+    </header>
   );
 };
 

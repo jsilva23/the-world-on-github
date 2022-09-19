@@ -6,20 +6,14 @@ import { AppContext } from './contexts/AppContext';
 import './styles/app.scss';
 
 function App() {
-  const { loading, data } = useContext(AppContext);
+  const { loading, data, fetchData } = useContext(AppContext);
   return (
     <>
-      {loading && (
-        <>
-          <Header />
-          <Loading size='50' />
-        </>
-      )}
-      {data && (
-        <>
-          <Header />
-          <UserList />
-        </>
+      <Header />
+      {loading ? (
+        <Loading size='50' />
+      ) : (
+        <UserList data={data} fetchData={fetchData} />
       )}
     </>
   );

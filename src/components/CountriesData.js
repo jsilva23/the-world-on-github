@@ -12,7 +12,6 @@ const CountriesData = ({ totalUsers }) => {
         <span className='desc'>Users</span>
       </div>
       <div>
-        {' '}
         <span className='numbers'>{date.getDate()}</span>
         <span className='desc'>Day</span>
       </div>

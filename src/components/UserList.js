@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { AppContext } from '../contexts/AppContext';
 import Loading from './Loading';
 import User from './User';
 
-const UserList = () => {
-  const { data, fetchData } = useContext(AppContext);
-
+const UserList = ({ data, fetchData }) => {
   return (
     <InfiniteScroll
       className='users-list'

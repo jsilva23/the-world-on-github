@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
   const [location, setLocation] = useState('location:angola');
   const [currentCountry, setCurrentCountry] = useState('angola');
   const [searchValue, setSearchValue] = useState('');
+
   const { loading, data, fetchMore } = useQuery(FEED_QUERY, {
     variables: { first, location },
   });
