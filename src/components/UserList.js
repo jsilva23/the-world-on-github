@@ -7,7 +7,7 @@ const UserList = ({ data, fetchData }) => {
   return (
     <InfiniteScroll
       className='users-list'
-      dataLength={data.search.edges.length || 0}
+      dataLength={data ? data.search.edges.length : 0}
       next={fetchData}
       hasMore={data.search.pageInfo.hasNextPage}
       loader={<Loading size='30' />}
