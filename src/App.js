@@ -12,9 +12,9 @@ function App() {
       <Header />
       {loading ? (
         <Loading size='50' />
-      ) : (
+      ) : data ? (
         <UserList data={data} fetchData={fetchData} />
-      )}
+      ) : null}
     </>
   );
 }
