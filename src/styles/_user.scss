@@ -11,6 +11,7 @@
   .user-details {
     display: flex;
     align-items: center;
+    justify-content: space-around;
 
     img {
       width: 110px;
@@ -27,7 +28,6 @@
   }
 
   .user-info {
-    width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 20px;
@@ -73,7 +73,7 @@
     align-items: center;
 
     .button-60 {
-      width: 45%;
+      width: 100%;
       margin: 0 5px;
       align-items: center;
       appearance: none;
@@ -96,6 +96,7 @@
       touch-action: manipulation;
       vertical-align: top;
       white-space: nowrap;
+      text-decoration: none;
     }
 
     .button-60:active {

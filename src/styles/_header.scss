@@ -27,9 +27,9 @@ header {
     img {
       position: absolute;
       right: 60px;
-      top: 35px;
       width: 35%;
     }
+
   }
 
   h1 {
@@ -43,5 +43,20 @@ header {
     text-align: center;
     font-size: 1.6rem;
     margin: 20px 0;
+  }
+
+  @media (max-width: 1024px) {
+    .header-content {
+      justify-content: center;
+
+      img {
+        display: none;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+    }
   }
 }
