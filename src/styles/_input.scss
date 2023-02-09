@@ -25,9 +25,13 @@
   flex: 1;
   margin-right: 20px;
   border-radius: 4px;
+
   @media (max-width: 650px) {
-    width: 50%;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
+
   input {
     background: none;
     width: 100%;
@@ -49,7 +53,7 @@
   border-radius: 4px;
 
   @media (max-width: 650px) {
-    width: 50%;
+    width: 100%;
   }
 
   input {

@@ -6,19 +6,15 @@
 
 html {
   font-size: 62.5%;
-  @media (min-width: 1500px) {
+  @media (min-width: 1285px) {
     font-size: 85%;
   }
   @media (max-width: 852px) {
     font-size: 60%;
   }
 
-  @media (max-width: 556px) {
+  @media (max-width: 360px) {
     font-size: 50%;
-  }
-
-  @media (max-width: 385px) {
-    font-size: 45%;
   }
 }
 
